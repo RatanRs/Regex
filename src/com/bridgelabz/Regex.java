@@ -18,7 +18,7 @@ public class Regex {
 		Scanner input=new Scanner(System.in);
 		System.out.println("Enter the password");
 		String passWord=input.next();
-		String stringPattern = "[A-Z]{1}[a-z]{2,}";
+		String stringPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%&*]).{8,}$";
 		Pattern pattern = Pattern.compile(stringPattern);
 		Matcher matcher = pattern.matcher(passWord);
 		if (matcher.matches()) {
