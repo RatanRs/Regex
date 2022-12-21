@@ -14,20 +14,22 @@ public class Regex {
 	 * 
 	 * @param args
 	 */
-	void displayPhoneNumber() {
-		String phoneNumber = "91 8806564783";
-		String stringPattern="[0-9]{2} [0-9]{10}";
+	void displayPassword() {
+		Scanner input=new Scanner(System.in);
+		System.out.println("Enter the password");
+		String passWord=input.next();
+		String stringPattern = "^(?=.*[a-z]).{8}$";
 		Pattern pattern = Pattern.compile(stringPattern);
-		Matcher matcher = pattern .matcher(phoneNumber);
+		Matcher matcher = pattern.matcher(passWord);
 		if (matcher.matches()) {
-			System.out.println("PhoneNumber is  Validate");
+			System.out.println("Password is  Validate");
 		} else {
-			System.out.println("PhoneNumber is Not  Validate");
+			System.out.println("Password is Not  Validate");
 		}
 	}
 
 	public static void main(String[] args) {
 		Regex display = new Regex();
-		display.displayPhoneNumber();
+		display.displayPassword();
 	}
 }
