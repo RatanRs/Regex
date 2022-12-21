@@ -14,22 +14,22 @@ public class Regex {
 	 * 
 	 * @param args
 	 */
-	void displayLastName() {
+	void displayemailId() {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter Last_Name=");
-		String firstName = input.next();
-		String y = "[A-Z]{1}[a-z]{2}";
-		Pattern p = Pattern.compile(y);
-		Matcher m = p.matcher(firstName);
-		if (m.matches()) {
-			System.out.println("Last Name Validate");
+		System.out.println("Enter Email_Id=");
+		String emailId = input.next();
+		String stringPattern= "abc.[a-z]{3,}+[@]bl.co.[a-z]{2}";
+		Pattern pattern = Pattern.compile(stringPattern);
+		Matcher matcher = pattern .matcher(emailId);
+		if (matcher.matches()) {
+			System.out.println("EmailId is  Validate");
 		} else {
-			System.out.println("Last Name Not  Validate");
+			System.out.println("EmailId is Not  Validate");
 		}
 	}
 
 	public static void main(String[] args) {
 		Regex display = new Regex();
-		display.displayLastName();
+		display.displayemailId();
 	}
 }
