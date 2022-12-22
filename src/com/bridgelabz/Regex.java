@@ -14,22 +14,22 @@ public class Regex {
 	 * 
 	 * @param args
 	 */
-	void displayPassword() {
+	void displayEmailId() {
 		Scanner input=new Scanner(System.in);
-		System.out.println("Enter the password");
+		System.out.println("Enter the EmailId");
 		String passWord=input.next();
-		String stringPattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%&*]).{8,}$";
+		String stringPattern = "[a-z]{3,}[-.+]{0,1}[10]{0,3}[@]{1}[10]{0,3}[a-z]{0,5}[.]{0,1}[a-z]{0,3}[,.]{0,1}[a-z]{0,3}\")";
 		Pattern pattern = Pattern.compile(stringPattern);
 		Matcher matcher = pattern.matcher(passWord);
 		if (matcher.matches()) {
-			System.out.println("Password is  Validate");
+			System.out.println("Email ID is  Validate");
 		} else {
-			System.out.println("Password is Not  Validate");
+			System.out.println("Email ID is Not  Validate");
 		}
 	}
 
 	public static void main(String[] args) {
 		Regex display = new Regex();
-		display.displayPassword();
+		display.displayEmailId();
 	}
 }
